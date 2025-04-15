@@ -3,30 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page</title>
+    <title>Indian Cricketer - Rohit Sharma</title>
     <style>
-        .center-text {
-            text-align: center; 
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+            color: #333;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            color: #cde6f9;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px;
+        }
+
+        .bio {
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .bio:hover {
+            transform: scale(1.01);
+        }
+
+        .bio h2 {
+            color: #0077b6;
+            margin-bottom: 20px;
+        }
+
+        .bio img {
+            width: 60%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bio p {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .bio img {
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
-<body> 
-    
-    <header>  
-    <div class ="Center-text">
-    <h1><b>Indian Cricketer - Rohit Sharma</b></h1>
-    <p>Indian Cricketer  |  Captain  |  Records Holder </p>
-</div>
-</header>   
+<body>
 
-<div class="container">
-    <section class="bio">
-        <h2>About Rohit Sharma</h2>
-        <img src="C:\Users\ASUS\Desktop\Web Development\Images\rohit-sharma-.webp" alt="Rohit Sharma">
-        <p>Rohit Sharma is an Indian cricketer and the current captain of the Indian national team in all formats.
-         He is widely regarded as one of the best opening batsmen in the world and holds multiple records in international cricket, including the highest individual score in a One Day International (ODI) match. 
-         Known for his elegant style of batting, he has also been a key player for the Mumbai Indians in the Indian Premier League (IPL).</p>
-    </section>
-    
+    <header>
+        <h1><b>Indian Cricketer - Rohit Sharma</b></h1>
+        <p>Captain | Record Holder | Stylish Opener</p>
+    </header>
+
+    <div class="container">
+        <section class="bio">
+            <h2>About Rohit Sharma</h2>
+            <img src="C:\Users\ASUS\Desktop\Web Development\Images\rohit-sharma-.webp" alt="Rohit Sharma">
+            <p>Rohit Sharma is an Indian cricketer and the current captain of the Indian national team in all formats.
+            He is widely regarded as one of the best opening batsmen in the world and holds multiple records in international cricket,
+            including the highest individual score in a One Day International (ODI) match. Known for his elegant style of batting,
+            he has also been a key player for the Mumbai Indians in the Indian Premier League (IPL).</p>
+        </section>
+    </div>
+
 </body>
 </html>
