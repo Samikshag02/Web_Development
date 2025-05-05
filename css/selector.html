@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Fitness Planner</title>
+  <style>
+    /* Universal selector */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Element selectors */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3f7f9;
+      color: #333;
+      padding: 20px;
+    }
+
+    table {
+      width: 90%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 15px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #005f73;
+      color: #fff;
+    }
+
+    h1, h3 {
+      text-align: center;
+      color: #0a9396;
+    }
+
+    /* Class selector */
+    .highlight {
+      background-color: #e0f7fa;
+      font-weight: bold;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 20px;
+      font-style: italic;
+      color: #666;
+    }
+
+    /* ID selector */
+    #title {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    /* Group selector */
+    h1, h3, .note {
+      margin-bottom: 10px;
+    }
+
+    /* Descendant selector */
+    table td span {
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* Child selector */
+    table > tr > th:first-child {
+      background-color: #003049;
+    }
+
+    /* Adjacent sibling selector */
+    h1 + h3 {
+      color: #555;
+      font-weight: normal;
+    }
+
+    /* Attribute selector */
+    td[colspan] {
+      background-color: #fdfcdc;
+      color: #bc6c25;
+      font-style: italic;
+    }
+
+    /* Pseudo-classes */
+    tr:hover {
+      background-color: #f1f8ff;
+    }
+
+    td:first-child {
+      font-weight: bold;
+      background-color: #f0efeb;
+    }
+
+    td:last-child {
+      color: #005f73;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Weekly Fitness Planner using Selectors</h1>
+  <h3>Staying Fit, One Day at a Time!</h3>
+
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>6 AM - 7 AM</th>
+      <th>7 PM - 8 PM</th>
+      <th>Note</th>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td class="highlight">Jogging</td>
+      <td>Yoga</td>
+      <td><span>Focus on breathing</span></td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td>Strength Training</td>
+      <td class="highlight">Zumba</td>
+      <td><span>Hydrate well</span></td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td colspan="2">Rest & Recovery</td>
+      <td><span>Stretching session recommended</span></td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td class="highlight">Cycling</td>
+      <td>Pilates</td>
+      <td><span>Leg day focus</span></td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td>Cardio</td>
+      <td class="highlight">Dance Workout</td>
+      <td><span>Endurance building</span></td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td>HIIT</td>
+      <td class="highlight">Meditation</td>
+      <td><span>Mind + Body</span></td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td colspan="2">Outdoor Walk or Hiking</td>
+      <td><span>Free day</span></td>
+    </tr>
+  </table>
+
+  <div class="note">
+    “Fitness is not about being better than someone else… it’s about being better than you used to be.”
+  </div>
+
+</body>
+</html>

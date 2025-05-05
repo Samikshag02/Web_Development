@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Internal CSS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      max-width: 600px;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    h1 {
+      color: #4a6baf;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 17px;
+      color: #333;
+      line-height: 1.7;
+    }
+    
+    h3 {
+      color: #4a6baf;
+      margin-top: 25px;
+    }
+    
+    ul {
+      text-align: left;
+      color: #444;
+      font-size: 16px;
+      line-height: 1.8;
+      display: inline-block;
+      padding-left: 20px;
+    }
+    
+    .fun-fact {
+      font-size: 16px;
+      color: #666;
+      font-style: italic;
+      margin-top: 25px;
+    }
+    
+    .btn {
+      text-decoration: none;
+      background-color: #4a6baf;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: #3a5a9f;
+      transform: translateY(-2px);
+    }
+    
+    code {
+      background: #f0f4ff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #4a6baf;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>📘 Learn Internal CSS</h1>
+    <p>
+      Internal CSS is defined within the <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> section.
+      It's great for single-page styling where you want to keep everything in one file.
+    </p>
+
+    <h3>🎯 When to Use Internal CSS?</h3>
+    <ul>
+      <li>For single-page websites</li>
+      <li>When you want to keep HTML and CSS together</li>
+      <li>For prototyping before moving to external stylesheets</li>
+    </ul>
+
+    <p class="fun-fact">
+      💡 <strong>Did You Know?</strong> Internal CSS has higher priority than external stylesheets but lower than inline styles!
+    </p>
+
+    <a href="index.html" class="btn">⬅️ Back to Home</a>
+  </div>
+
+</body>
+</html>
