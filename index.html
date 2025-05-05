@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samiksha's Web Assignments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #34495e;
+      --accent: #e74c3c;
+      --text: #ecf0f1;
+      --highlight: #f1c40f;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 3px;
+      background: var(--highlight);
+      animation: lineExpand 1.5s ease-out;
+    }
+
+    @keyframes lineExpand {
+      0% { width: 0; opacity: 0; }
+      100% { width: 150px; opacity: 1; }
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+      animation: fadeInDown 1s ease;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin: 1rem 0 0.5rem;
+      font-weight: 400;
+      color: var(--highlight);
+      animation: fadeIn 1.5s ease;
+    }
+
+    header h3 {
+      font-size: 1.2rem;
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: 2px;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInDown {
+      from { 
+        opacity: 0; 
+        transform: translateY(-30px);
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0);
+      }
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      gap: 2rem;
+      perspective: 1000px;
+    }
+
+    .category {
+      background: rgba(255, 255, 255, 0.1);
+      width: 320px;
+      padding: 2.5rem;
+      border-radius: 8px;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.1);
+      transform-style: preserve-3d;
+      animation: cardEntrance 0.8s ease-out;
+      animation-fill-mode: backwards;
+    }
+    
+    @keyframes cardEntrance {
+      from { 
+        opacity: 0; 
+        transform: translateY(50px) rotateX(-20deg); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0) rotateX(0); 
+      }
+    }
+
+    .category:nth-child(1) { animation-delay: 0.2s; }
+    .category:nth-child(2) { animation-delay: 0.4s; }
+    .category:nth-child(3) { animation-delay: 0.6s; }
+
+    .category:hover {
+      transform: translateY(-10px) scale(1.03) rotateY(5deg);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .category h2 {
+      font-family: 'Playfair Display', serif;
+      margin: 0 0 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--highlight);
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .category h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: var(--highlight);
+      transition: width 0.3s ease;
+    }
+    
+    .category:hover h2::after {
+      width: 100px;
+    }
+
+    .category p {
+      margin: 0 0 2rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .category a {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: transparent;
+      border: 2px solid var(--highlight);
+      border-radius: 50px;
+      text-decoration: none;
+      color: var(--highlight);
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .category a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--highlight);
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+    
+    .category a:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .category a:hover::before {
+      left: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      position: relative;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+    }
+    
+    footer span {
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+      color: var(--accent);
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header h2 {
+        font-size: 1.5rem;
+      }
+      
+      .categories {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .category {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Samiksha Vinod Gaikwad</h1>
+    <h2>Web Development Assignments</h2>
+    <h3>Roll No: 15</h3>
+  </header>
+
+  <div class="categories">
+    <div class="category">
+      <h2>HTML Assignments</h2>
+      <p>All HTML related assignments including forms, tables, and semantic markup</p>
+      <a href="html/view.html">View Assignments</a>
+    </div>
+    
+    <div class="category">
+      <h2>CSS Assignments</h2>
+      <p>Styling exercises, layouts, animations and responsive design work</p>
+      <a href="css/about.html">View Assignments</a>
+    </div>
+    
+    <div class="category">
+      <h2>XML Assignments</h2>
+      <p>XML documents with DTD, Schema and XSLT transformations</p>
+      <a href="XML_CSS/main.html">View Assignments</a>
+    </div>
+  </div>
+
+  <footer>
+    Made with <span>♥</span> by Samiksha
+  </footer>
+
+</body>
+</html>
