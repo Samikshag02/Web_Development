@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samiksha's Creative Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0a0a12;
+      --secondary: #1e1e2e;
+      --accent: #ff4d79;
+      --highlight: #ff8fab;
+      --text: #f0f0f5;
+      --neon: 0 0 10px rgba(255,77,121,0.8);
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text);
+      background-color: var(--primary);
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(30,30,46,0.8) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255,77,121,0.2) 0%, transparent 50%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      position: relative;
+    }
+
+    .header-decoration {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      filter: blur(40px);
+      opacity: 0.3;
+      z-index: -1;
+      animation: float 8s ease-in-out infinite alternate;
+    }
+
+    .decoration-1 {
+      top: -50px;
+      left: -50px;
+    }
+
+    .decoration-2 {
+      bottom: -30px;
+      right: -50px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(20px, 20px); }
+      100% { transform: translate(-10px, -10px); }
+    }
+
+    header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 4rem;
+      margin: 0;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ff8fab, #ff4d79);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: var(--neon);
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+    }
+
+    header h2 {
+      font-size: 1.8rem;
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--highlight);
+      position: relative;
+      display: inline-block;
+    }
+
+    header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    header h3 {
+      font-size: 1.2rem;
+      margin: 1rem 0 0;
+      font-weight: 300;
+      color: rgba(240,240,245,0.7);
+      letter-spacing: 3px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .assignment {
+      background: rgba(30, 30, 46, 0.6);
+      border: 1px solid rgba(255, 141, 171, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .assignment::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,77,121,0.1) 0%, transparent 50%);
+      z-index: -1;
+    }
+
+    .assignment:hover {
+      transform: translateY(-5px) scale(1.02);
+      border-color: var(--accent);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4), var(--neon);
+    }
+
+    .assignment-number {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(255,77,121,0.1);
+      line-height: 1;
+      z-index: -1;
+    }
+
+    .assignment a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 1.2rem;
+      display: block;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .assignment:hover a {
+      color: var(--highlight);
+    }
+
+    .assignment a::after {
+      content: '→';
+      position: absolute;
+      right: 0;
+      opacity: 0;
+      transition: all 0.3s ease;
+      color: var(--accent);
+    }
+
+    .assignment:hover a::after {
+      opacity: 1;
+      right: -1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 0;
+      position: relative;
+    }
+
+    .signature {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      color: var(--highlight);
+      position: relative;
+      display: inline-block;
+    }
+
+    .signature::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -2rem;
+      width: 1.5rem;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .signature::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -2rem;
+      width: 1.5rem;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    /* Glitch effect on hover */
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-3px, 3px); }
+      40% { transform: translate(-3px, -3px); }
+      60% { transform: translate(3px, 3px); }
+      80% { transform: translate(3px, -3px); }
+      100% { transform: translate(0); }
+    }
+
+    .assignment:hover {
+      animation: glitch 0.5s linear;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header h2 {
+        font-size: 1.2rem;
+      }
+      
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-decoration decoration-1"></div>
+    <div class="header-decoration decoration-2"></div>
+    <h1>Samiksha Gaikwad</h1>
+    <h2>Web Development Portfolio</h2>
+    <h3>Roll No: 15</h3>
+  </header>
+
+  <div class="container">
+    <div class="assignment">
+      <span class="assignment-number">01</span>
+      <a href="Assignment 1.html">Basic HTML Structure</a>
+    </div>
+    <div class="assignment">
+      <span class="assignment-number">02</span>
+      <a href="Assignment 2.html">Static Webpage Design</a>
+    </div>
+    <div class="assignment">
+      <span class="assignment-number">03</span>
+      <a href="Assignment 3.html">Text Formatting Tags</a>
+    </div>
+    <div class="assignment">
+      <span class="assignment-number">04</span>
+      <a href="Assignment 4.html">List Elements</a>
+    </div>
+    <div class="assignment">
+      <span class="assignment-number">05</span>
+      <a href="Assignment 5.html">Image Implementation</a>
+    </div>
+    <div class="assignment">
+      <span class="assignment-number">06</span>
+      <a href="Assignment 6.html">Frame Structures</a>
+    </div>
+    <div class="assignment">
+      <span class="assignment-number">07</span>
+      <a href="Assignment 7.html">Link Navigation</a>
+    </div>
+    <div class="assignment">
+      <span class="assignment-number">08</span>
+      <a href="Assignment 8.html">Timetable Layout</a>
+    </div>
+    <div class="assignment">
+      <span class="assignment-number">09</span>
+      <a href="Assignment 9.html">Interactive Forms</a>
+    </div>
+    <div class="assignment">
+      <span class="assignment-number">10</span>
+      <a href="Assignment 10.html">Professional Resume</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="signature">Samiksha Gaikwad</div>
+  </footer>
+
+</body>
+</html>
